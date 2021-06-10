@@ -39,4 +39,20 @@ public class BookService {
     public Book findById(String bookId) {
         return bookRepo.findById(bookId);
     }
+
+    public List<Book> getAll(int limit, int offset) {
+        return bookRepo.getAll(limit, offset);
+    }
+
+    public List<Book> getAllSorted(String sort) {
+        return bookRepo.getAllSorted(sort);
+    }
+
+    public List<Book> getAllBooksByAuthor(String author) {
+        return bookRepo.getAllByAuthor(author);
+    }
+
+    public Book updateBook(String id, CreateBookDto createBookDto) {
+        return bookRepo.update(id, createBookDto);
+    }
 }
