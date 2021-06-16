@@ -45,7 +45,7 @@ public class BookController {
             @RequestParam(value = "limit", defaultValue = "10") int limit,
             @RequestParam(value = "offset", defaultValue = "0") int offset) {
         List<Book> bookList = bookService.getAll(limit, offset);
-        if (bookList == null) {
+        if (bookList.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(bookList);
@@ -59,7 +59,10 @@ public class BookController {
     public ResponseEntity<List<Book>> getBooksSort(
             @RequestParam(value = "sort", defaultValue = "name") String sort) {
         List<Book> allSorted = bookService.getAllSorted(sort);
-        if (allSorted == null) {
+        if (!sort.equals("name") && !sort.equals("year")) {
+            return ResponseEntity.badRequest().build();
+        }
+        if (allSorted.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(allSorted);
@@ -85,7 +88,7 @@ public class BookController {
     public ResponseEntity<List<Book>> getBooksAuthor(
             @RequestParam(value = "author") String author) {
         List<Book> allBooksByAuthor = bookService.getAllBooksByAuthor(author);
-        if (allBooksByAuthor == null) {
+        if (allBooksByAuthor.isEmpty()) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(allBooksByAuthor);
