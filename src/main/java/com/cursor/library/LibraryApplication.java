@@ -31,12 +31,12 @@ public class LibraryApplication {
         var user = new User();
         user.setUsername("Aboba");
         user.setPassword(encoder.encode("1234"));
-        user.setPermissions(Set.of(UserPermission.USER));
+        user.setPermissions(Set.of(UserPermission.ROLE_USER));
         userRepo.save(user);
         var admin = new User();
         admin.setUsername("admin");
         admin.setPassword(encoder.encode("admin"));
-        admin.setPermissions(Set.of(UserPermission.ADMIN));
+        admin.setPermissions(Set.of(UserPermission.ROLE_ADMIN));
         userRepo.save(admin);
     }
 }

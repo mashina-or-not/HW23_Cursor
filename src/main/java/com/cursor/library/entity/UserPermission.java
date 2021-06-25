@@ -1,6 +1,6 @@
 package com.cursor.library.entity;
 
 public enum UserPermission {
-    USER,
-    ADMIN
+    ROLE_USER,
+    ROLE_ADMIN
 }
