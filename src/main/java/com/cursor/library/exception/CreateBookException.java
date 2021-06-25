@@ -1,4 +1,4 @@
-package com.cursor.library;
+package com.cursor.library.exception;
 
 public class CreateBookException extends Exception {
 

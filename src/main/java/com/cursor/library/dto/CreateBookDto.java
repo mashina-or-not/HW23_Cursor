@@ -1,4 +1,4 @@
-package com.cursor.library;
+package com.cursor.library.dto;
 
 //@AllArgsConstructor
 public class CreateBookDto {

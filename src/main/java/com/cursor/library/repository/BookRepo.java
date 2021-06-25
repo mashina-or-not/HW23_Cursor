@@ -1,5 +1,7 @@
-package com.cursor.library;
+package com.cursor.library.repository;
 
+import com.cursor.library.dto.CreateBookDto;
+import com.cursor.library.entity.Book;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
